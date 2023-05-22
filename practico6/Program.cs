@@ -52,10 +52,11 @@ if(numero > 0){
 // ===================================================================================================
 // Punto 3
 // ===================================================================================================
-/*
+
 string? input, siNoStr;
 bool parseoBool;
-int siNo, a, b;
+int siNo;
+float a, b,division;
 
 
 do{
@@ -64,12 +65,18 @@ do{
     Console.WriteLine("2 - RESTAR");
     Console.WriteLine("3 - MULTIPLICAR");
     Console.WriteLine("4 - DIVIDIR");
+    Console.WriteLine("5 - VALOR ABSOLUTO");
+    Console.WriteLine("6 - CUADRADO");
+    Console.WriteLine("7 - RAIZ CUADRADA");
+    Console.WriteLine("8 - SENO");
+    Console.WriteLine("9 - COSENO");
+    Console.WriteLine("10 - ENTERO DE UN FLOAT");
     input = Console.ReadLine();
     parseoBool = int.TryParse(input, out int operacion);
-
+    if(operacion>=1 && operacion<6){
     Console.WriteLine("Ingrese dos numeros: ");
-    parseoBool = int.TryParse(Console.ReadLine(), out  a);
-    parseoBool = int.TryParse(Console.ReadLine(), out  b);
+    parseoBool = float.TryParse(Console.ReadLine(), out  a);
+    parseoBool = float.TryParse(Console.ReadLine(), out  b);
 
     switch(operacion){
         case 1:
@@ -82,13 +89,53 @@ do{
             Console.WriteLine($"La multiplicación del numero {a} y {b} es: {a * b}");
             break;
         case 4:
-            decimal division = (decimal) a / b;
+            division =  a / b;
             Console.WriteLine($"La división del numero {a} y {b} es: {division.ToString("N2")}");
             break;
         default:
             Console.WriteLine("El numero ingresado no corresponde a ninguna operación");
             break;
     }
+
+    } else {
+        if(11>operacion && operacion>=6){
+         Console.WriteLine("Ingrese un numero: ");
+         parseoBool = float.TryParse(Console.ReadLine(), out  a);
+
+        switch(operacion){
+            case 5:
+                 Console.WriteLine($"El valor absoluto de {a} es: {Math.Abs(a)}");
+                 break;
+            case 6:
+                 Console.WriteLine($"El cuadrado de {a} es: {Math.Pow(a, 2)}");
+                 break;
+            case 7:
+                if(a < 0) {
+                  Console.WriteLine("No se puede calcular");
+                  break;
+            }
+
+                 Console.WriteLine($"La raiz cuadrada de {a} es: {Math.Sqrt(a)}");
+                 break;
+            case 8:
+                decimal seno = (decimal) Math.Sin(a);
+                Console.WriteLine($"El seno de {a} es: {seno}");
+                break;
+            case 9:
+                decimal coseno = (decimal) Math.Cos(a);
+                Console.WriteLine($"El coseno de {a} es: {coseno}");
+                break;
+            case 10:
+                Console.WriteLine($"El entero de {a} es: {(int) a}");
+                break;
+            default:
+                Console.WriteLine("El numero ingresado no corresponde a ninguna operación");
+                break;
+    }
+
+   }
+}
+
 
     Console.WriteLine("Quiere seguir operando: SI[1] - NO[0]");
     siNoStr = Console.ReadLine();
@@ -97,7 +144,6 @@ do{
     
 }while(siNo == 1);
 
-*/
 
 
 
