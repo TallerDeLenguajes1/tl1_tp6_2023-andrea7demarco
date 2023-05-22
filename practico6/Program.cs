@@ -94,19 +94,6 @@ do{
 }while(siNo == 1);
 
 
-Console.WriteLine("Ingrese dos numeros: ");
-parseoBool = float.TryParse(Console.ReadLine(), out  float x);
-parseoBool = float.TryParse(Console.ReadLine(), out  float y);
-
-if(x == y) Console.WriteLine("Los numeros son iguales");
-
-if(x > y){
-    Console.WriteLine($"El valor máximo es: {x}");
-    Console.WriteLine($"El valor mínimo es: {y}");
-}else{
-    Console.WriteLine($"El valor máximo es: {y}");
-    Console.WriteLine($"El valor mínimo es: {x}");
-}
 
 
 
