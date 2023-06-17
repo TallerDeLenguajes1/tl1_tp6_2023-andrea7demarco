@@ -55,7 +55,7 @@ if(numero > 0){
 string? texto1, texto2, cadenaConc;
 bool parseoBool;
 int numero;
-char cadena[];
+
 //string[] arrayCadena;
 Console.WriteLine("Ingrese un texto: ");
 texto1 = Console.ReadLine();
@@ -83,11 +83,32 @@ parseoBool= int.TryParse(Console.ReadLine(), out numero);
 string subString = cadenaConc.Substring(numero);
 Console.WriteLine($"sub cadena a partir del indice:{numero}");
 Console.WriteLine(subString);
+
+
 Console.WriteLine("Recorrido de la cadena con foreach:");
-cadena= input.ToCharArray();
-foreach (char element in cadena)
+        foreach (char c in cadenaConc)
+        {
+            Console.WriteLine(c);
+        }
+
+Console.WriteLine("Ingrese la palabra a buscar:\n");
+string? palabra = Console.ReadLine();
+
+if(cadenaConc.Contains(palabra))
 {
-    Console.WriteLine($"{cadena} ");
+    Console.WriteLine($"La palabra '{palabra}' se encuentra en la cadena\n");
+
 }
+else 
+{
+    Console.WriteLine($"La palabra '{palabra}' no se encuentra en la cadena\n");
+}
+    Console.WriteLine("Ingrese una cadena separada por caracteres:");
+    string? cadenaSeparada = Console.ReadLine();
 
-
+    string[] caracteres = cadenaSeparada.Split(' ');
+            Console.WriteLine("Resultados:");
+            foreach (string caracter in caracteres)
+            {
+                Console.WriteLine(caracter);
+            }
