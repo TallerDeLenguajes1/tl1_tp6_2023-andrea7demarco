@@ -7,7 +7,7 @@ b = a;
 
 Console.WriteLine("Valor de a: "+a);
 Console.WriteLine($"Valor de b: {b}");
-*/
+
 
 // Punto 1
 
@@ -44,6 +44,50 @@ if(numero > 0){
     Console.WriteLine($"El numero invertido es: {devolverString}");
     */
 
-    Console.WriteLine($"El numero invertido es: {numeroInvertido}"); //$ indica una variable (interpolación)
+    //Console.WriteLine($"El numero invertido es: {numeroInvertido}"); //$ indica una variable (interpolación)
 
+    //} 
+
+
+
+//EJERCICIO 4:
+
+string? texto1, texto2, cadenaConc;
+bool parseoBool;
+int numero;
+char cadena[];
+//string[] arrayCadena;
+Console.WriteLine("Ingrese un texto: ");
+texto1 = Console.ReadLine();
+
+Console.WriteLine("La longitud de la cadena es: "+ texto1.Length);
+
+Console.WriteLine("Ingrese un segundo texto: ");
+texto2 = Console.ReadLine();
+
+// Primera opcion de concatenacion de dos cadenas
+// arrayCadena = new string[]{texto1, texto2};
+// cadenaConc = string.Concat(arrayCadena);
+
+// Segunda opcion
+
+cadenaConc = $"{texto1} {texto2}";
+Console.Clear();
+Console.WriteLine("La concatenacion es: "+ cadenaConc);
+
+Console.WriteLine("Ingrese un numero: "); 
+
+
+parseoBool= int.TryParse(Console.ReadLine(), out numero);
+
+string subString = cadenaConc.Substring(numero);
+Console.WriteLine($"sub cadena a partir del indice:{numero}");
+Console.WriteLine(subString);
+Console.WriteLine("Recorrido de la cadena con foreach:");
+cadena= input.ToCharArray();
+foreach (char element in cadena)
+{
+    Console.WriteLine($"{cadena} ");
 }
+
+
